@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Conversation_Chat_Serveur\Conversation_Chat_Serveur.DAL.csproj" />
+    <ProjectReference Include="..\Conversation_User_Serveur.BL\Conversation_User_Serveur.BL.csproj" />
+  </ItemGroup>
+
+</Project>

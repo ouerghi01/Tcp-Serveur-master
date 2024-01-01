@@ -1,0 +1,47 @@
+﻿<Window x:Class="Tcp_Serveur.Views.Serveur_Views"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tcp_Serveur.Views"
+        mc:Ignorable="d"
+        Title="Serveur_Views" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="556"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Cursor="ScrollAll">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="100"/>
+                <!-- Auto-sized row -->
+                <RowDefinition Height="197"/>
+                <!-- Star-sized row (takes remaining space) -->
+                <RowDefinition Height="53"/>
+            </Grid.RowDefinitions>
+            <Label  Grid.Row="0" Content="Ip Address" Margin="0,10,436,50" FontSize="15" FontStyle="Oblique" FontWeight="Black"/>
+            <TextBox Grid.Row="0" Text="{Binding Se.IpAddress,Mode=TwoWay}"  Margin="91,10,278,50"  />
+            <Label  Grid.Row="0"  Content="Port" Margin="10,55,475,15" Padding="0" FontSize="15" FontStyle="Italic" FontWeight="Black"  />
+            <TextBox Grid.Row="0"  Text="{Binding Se.Port,Mode=TwoWay}" Margin="91,50,278,20" RenderTransformOrigin="0.546,0.96"/>
+            <Label Grid.Row="1" Content="MessageReceived" Margin="0,10,0,43" Grid.RowSpan="2"/>
+            <TextBox Grid.Row="1"  HorizontalAlignment="Left" VerticalAlignment="Top"
+         Width="358" Margin="60,10,0,0" Cursor="ScrollAll"
+         VerticalScrollBarVisibility="Auto" Height="160" Text="{Binding Se.ReceivedMessage,Mode=TwoWay}"  />
+
+            <Label Grid.Row="2" Content="message" Margin="46,27,390,-18" FontSize="19" FontWeight="Black" />
+            <TextBox Grid.Row="2" Margin="164,29,39,-20" 
+         BorderBrush="Gray" BorderThickness="1"
+         Padding="5"   Text="{Binding Se.Message,Mode=TwoWay}"
+         TextWrapping="Wrap" AcceptsReturn="True"
+         VerticalScrollBarVisibility="Visible"/>
+            <Button Grid.Row="2"  Margin="340,78,140,-74" FontSize="20" FontStyle="Normal" FontWeight="Bold" Background="Azure" Click="Button_Click">Start</Button>
+
+            <Button x:Name="Send" Grid.Row="2"  Margin="184,82,278,-70" FontSize="20" Background="Azure" FontWeight="Bold" Click="Button_Click_1" IsEnabled="{Binding Se.CanStartServer}" >Send</Button>
+
+
+        </Grid>
+        <Label Grid.Column="1" Content="Client Ip" Margin="14,58,-14,329" RenderTransformOrigin="1.03,1.143" FontSize="15" FontWeight="Bold"></Label>
+        <TextBox Grid.Column="1" Margin="10,105,-139,73" Text="{Binding Se.ipclient,Mode=TwoWay}" TextChanged="TextBox_TextChanged">
+        </TextBox>
+    </Grid>
+</Window>

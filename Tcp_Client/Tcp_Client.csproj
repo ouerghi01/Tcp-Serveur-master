@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Conversation.Service\Conversation.Service.csproj" />
+    <ProjectReference Include="..\Conversation_Chat_Serveur\Conversation_Chat_Serveur.DAL.csproj" />
+    <ProjectReference Include="..\Conversation_User_Serveur.BL\Conversation_User_Serveur.BL.csproj" />
+  </ItemGroup>
+
+</Project>

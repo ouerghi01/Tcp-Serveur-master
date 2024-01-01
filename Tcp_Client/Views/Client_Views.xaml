@@ -1,0 +1,45 @@
+﻿<Window x:Class="Tcp_Client.Views.Client_Views"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tcp_Client.Views"
+        mc:Ignorable="d"
+        Title="Client_Views" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="556"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Cursor="ScrollAll">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="100"/>
+                <!-- Auto-sized row -->
+                <RowDefinition Height="197"/>
+                <!-- Star-sized row (takes remaining space) -->
+                <RowDefinition Height="53"/>
+            </Grid.RowDefinitions>
+            <Label  Grid.Row="0" Content="Serveur Ip Address" Margin="0,10,390,50" FontSize="15" FontStyle="Oblique" FontWeight="Black"/>
+            <TextBox Grid.Row="0"    Text="{Binding cl.Ip,Mode=TwoWay}"  Margin="192,0,178,60"  />
+            <Label  Grid.Row="0"  Content="Port" Margin="65,44,420,26" Padding="0" FontSize="15" FontStyle="Italic" FontWeight="Black"  />
+            <TextBox Grid.Row="0"  Text="{Binding cl.Port,Mode=TwoWay}" Margin="192,45,177,25" RenderTransformOrigin="0.546,0.96"/>
+            <Label Grid.Row="1" Content="MessageReceived" Margin="10,0,436,117" RenderTransformOrigin="0.679,1.369"/>
+            <TextBox Grid.Row="1"  HorizontalAlignment="Left" VerticalAlignment="Top"
+     Width="358" Margin="75,27,0,0" Cursor="ScrollAll" VerticalScrollBarVisibility="Visible"
+      Height="160" Text="{Binding cl.Message_serveur,Mode=TwoWay}"  />
+
+            <Label Grid.Row="2" Content="message" Margin="46,27,390,-18" FontSize="19" FontWeight="Black" />
+            <TextBox Grid.Row="2" Margin="164,29,39,-20" 
+     BorderBrush="Gray" BorderThickness="1" Text="{Binding cl.Message_client,Mode=TwoWay}"
+     Padding="5" 
+     TextWrapping="Wrap" AcceptsReturn="True"
+     VerticalScrollBarVisibility="Visible"/>
+            <Button Grid.Row="2"  Margin="340,78,123,-74" FontSize="20" FontStyle="Normal" FontWeight="Bold" Background="AliceBlue"  Click="Button_Click">Connect</Button>
+
+            <Button x:Name="Send" Grid.Row="2"  Margin="184,82,278,-70" FontSize="20" Background="Azure" FontWeight="Bold"  IsEnabled="{Binding cl.send,Mode=OneWay}" Click="Send_Click" >Send</Button>
+
+
+        </Grid>
+        
+    </Grid>
+</Window>
